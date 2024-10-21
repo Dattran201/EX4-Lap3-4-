@@ -1,0 +1,53 @@
+﻿@model  EX4.Models.Customer
+@{
+    ViewBag.Title = "CustomerDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{ViewBag.Title = "Chi tiết khách hàng";
+
+    //lấy dữ liệu truyền qua đối tượng theo cách 2
+
+    var customer = Model as EX4.Models.Customer;
+}
+
+<h2>Chi tiết khách hàng</h2>
+    <p>Mã số: @Model.CustomerId </p>
+    <p>Họ và tên: @Model.FullName </p>
+    <p>Địa chỉ: @Model.Address </p>
+    <p>Điện thoại: @Model.Phone </p>
+    <p>Email: @Model.Email </p>
+    <p>Số tiền dư: @Model.Balance </p>
+
+        @*
+            Chi tiết khách hàng lấy theo cách 1
+
+            Mã số: @customer.CustomerId
+
+            Họ và tên: @customer.FullName
+
+            Địa chỉ: @customer.Address
+
+            Điện thoại: @customer.Phone
+
+            Email: @customer.Email
+
+            Số tiền dư: @customer.Balance
+        *@
+
+        @*
+            Chi tiết khách hàng lấy qua ViewBag
+
+            Mã số: @ViewBag.customer.CustomerId
+
+            Họ và tên: @ViewBag.customer.FullName
+
+            Địa chỉ: @ViewBag.customer.Address
+
+            Điện thoại: @ViewBag.customer.Phone
+
+            Email: @ViewBag.customer.Email
+
+            Số tiền dư: @ViewBag.customer.Balance
+        *@
